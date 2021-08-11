@@ -38,7 +38,7 @@ locals {
   })
 }
 resource "local_file" "vcbuild_output" {
-  filename = "/home/runner/vctemplate.json"
+  filename = "${vcbuild_template_path}/vctemplate.json"
   content  = local.vctemplate_out
 }
 resource "null_resource" "vc" {
