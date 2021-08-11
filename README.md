@@ -20,8 +20,8 @@ This repo has the following structure:
 
 Prerequisites:
 
-* **VCSA installation media**: You must have access to the installation media.  It should be extracted to a path on the local system and accessible by the user executing the Terraform code.  Adjust the path to the *vcsa-deploy* executable accordingly. 
-* **vctemplate.json location**: Your user must have access to create the *vctemplate.json* file on the local filesystem.  Adjust the paths as necessary.
+* **VCSA installation media**: You must have access to the installation media.  It should be extracted to a path on the local system and accessible by the user executing the Terraform code.  Adjust the path to the *vcsa-deploy* using the *vcbuild_installer_path* variable executable accordingly. 
+* **vctemplate.json location**: Your user must have access to create the *vctemplate.json* file on the local filesystem.  Adjust the paths as necessary using the *vcbuild_installer_path* variable.
 
 ## What's a Module?
 

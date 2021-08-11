@@ -104,3 +104,15 @@ variable "vcbuild_ceip_enabled" {
   description = "Join VMware Customer Experience Program? 'true' or 'false' "
   default     = false
 }
+
+variable "vcbuild_installer_path" {
+  type = string
+  description = "Path to VCSA installer"
+  default = "/home/runner/vcenter/vcsa-cli-installer/lin64"
+}
+
+variable "vcbuild_template_path" {
+  type = string
+  description = "temporary path for VCSA JSON template"
+  default = "/home/runner"
+}

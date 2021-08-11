@@ -43,6 +43,6 @@ resource "local_file" "vcbuild_output" {
 }
 resource "null_resource" "vc" {
   provisioner "local-exec" {
-    command = "/home/runner/vcenter/vcsa-cli-installer/lin64/vcsa-deploy install --accept-eula --acknowledge-ceip --no-ssl-certificate-verification --verbose /home/runner/vctemplate.json"
+    command = "${vcbuild_installer_path}/vcsa-deploy install --accept-eula --acknowledge-ceip --no-ssl-certificate-verification --verbose ${vcbuild_template_path}/vctemplate.json"
   }
 }
