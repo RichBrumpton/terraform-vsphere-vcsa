@@ -37,12 +37,18 @@ locals {
     ceip_enabled       = var.vcbuild_ceip_enabled
   })
 }
+
 resource "local_file" "vcbuild_output" {
   filename = "${var.vcbuild_template_path}/vctemplate.json"
   content  = local.vctemplate_out
 }
+
 resource "null_resource" "vc" {
   provisioner "local-exec" {
     command = "${var.vcbuild_installer_path}/vcsa-deploy install --accept-eula --acknowledge-ceip --no-ssl-certificate-verification --verbose ${var.vcbuild_template_path}/vctemplate.json"
   }
+
+  depends_on = [
+    local_file.vcbuild_output
+  ]
 }
